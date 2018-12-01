@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import random
 
 
@@ -21,12 +22,18 @@ def rounds(pwds):
         pwds -= 1
 
 pwds = int(input('How many passwords do you want?\n'))
-pass_len = int(input('How long sholud the password be?\n'))
+pass_len = int(input('How long should the password be?\n'))
 
 # main part of the program
 if pass_len < 20:
-    print('That is a short password.\nThe default is 20 characters long.')
-    pass_len = 20
+    print('That is a short password.')
+    print('Generating a random password...') # generate a password of 20 to 40 chars
+    pass_len = int(random.choice(range(19, 41)))
+    print(f'Generating a password of {pass_len} characters')
+    rounds(pwds)
+elif pass_len > 40:
+    pass_len = int(random.choice(range(19, 41)))
+    print(f'Too long\nGenerating a shorter password...\nPassword length: {pass_len}')
     rounds(pwds)
 else:
     rounds(pwds)
