@@ -28,11 +28,11 @@ pass_len = int(input('How long should the password be?\n'))
 if pass_len < 20:
     print('That is a short password.')
     print('Generating a random password...') # generate a password of 20 to 40 chars
-    pass_len = int(random.choice(range(19, 41)))
+    pass_len = int(random.choice(range(19, 71)))
     print(f'Generating a password of {pass_len} characters')
     rounds(pwds)
-elif pass_len > 40:
-    pass_len = int(random.choice(range(19, 41)))
+elif pass_len > 70:
+    pass_len = int(random.choice(range(19, 71)))
     print(f'Too long\nGenerating a shorter password...\nPassword length: {pass_len}')
     rounds(pwds)
 else:
